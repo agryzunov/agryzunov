@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Fixing
 {
     /// <summary>
-    /// Информация по ценной бумаге от одного брокера
+    /// Информация по одной ценной бумаге от одной уполномоченной организации
     /// </summary>
     public class BrokerItemInfo
     {
@@ -23,7 +23,7 @@ namespace Fixing
     }
 
     /// <summary>
-    ///  Информация по ценной бумаге от всех брокеров
+    ///  Информация по ценной бумаге от всех уполномоченных организаций
     /// </summary>
     public class SecItemInfo
     {
@@ -42,7 +42,7 @@ namespace Fixing
                     RecalcMIRP(_excludeMaxMinForMIRP);
                 }
         }
-        public List<BrokerItemInfo> brokerItemInfo; //Список записей по всем брокерам
+        public List<BrokerItemInfo> brokerItemInfo; //Список записей по всем уполномоченным организациям
         public SecItemInfo(string strName, string strISIN, bool bExcludeMaxMin = false)
         {
             this.Name = strName;
@@ -52,12 +52,12 @@ namespace Fixing
             MIRP = 0;
         }
         /// <summary>
-        /// Добавить информацию от брокера в список
+        /// Добавить информацию от уполномоченной организации в список
         /// </summary>
         /// <param name="brokerItemData"></param>
         public void AddBrokerInfo(BrokerItemInfo brokerItemData)
         {
-            //Проверяем, нет ли в списке брокера с таким кодом
+            //Проверяем, нет ли в списке организации с таким кодом
             bool bExists = false;
             foreach(BrokerItemInfo bi in brokerItemInfo)
             {
