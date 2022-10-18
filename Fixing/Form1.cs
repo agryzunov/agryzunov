@@ -14,6 +14,7 @@ using NPOI.SS.UserModel;
 
 namespace Fixing
 {
+    // Главное окно приложения
     public partial class Form1 : Form
     {
         public SecItemsData secItemsData;
@@ -29,6 +30,7 @@ namespace Fixing
             secItemsData = new SecItemsData();
         }
 
+        // Список уполномоченнвх организаций
         public List<BrokerItem> ReadBrokersList(string strXlsFileName)
         {
             List<BrokerItem> xlsRows = new List<BrokerItem>();
